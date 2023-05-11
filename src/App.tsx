@@ -1,9 +1,11 @@
 import logo from './assets/logo.svg';
 import styles from './App.module.scss';
+import { Navigation } from './components/navigation/navigation';
 
 function App() {
     return (
         <div className={styles.App}>
+            <Navigation />
             <header className={styles['App-header']}>
                 <img src={logo} className={styles['App-logo']} alt="logo" />
                 <p>
