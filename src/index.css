@@ -9,3 +9,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+.H1 {
+  color: #ffffff;
+  text-align: center;
+  align-self: center;
+  position: static;
+  padding: 100px;
+  margin: 10px;
+  min-height: 90%;
+}

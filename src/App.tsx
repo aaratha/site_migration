@@ -1,26 +1,24 @@
-import logo from './assets/logo.svg';
 import styles from './App.module.scss';
 import { Navigation } from './components/navigation/navigation';
+import Navigation_module from './components/navigation/navigation.module.scss';
+import { Routes, Route, MemoryRouter } from 'react-router-dom';
+import { Projects } from './components/projects/projects';
+import { Home } from './components/home/home';
+import { Link } from 'react-router-dom';
 
 function App() {
     return (
-        <div className={styles.App}>
-            <Navigation />
-            <header className={styles['App-header']}>
-                <img src={logo} className={styles['App-logo']} alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className={styles['App-link']}
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <MemoryRouter>
+            <div className={styles.App}>
+                <Navigation />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/projects" element={<Projects />} />
+                    </Routes>
+            </div>
+            <section id="home"></section>
+            <section id="projects"></section>
+        </MemoryRouter>
     );
 }
 

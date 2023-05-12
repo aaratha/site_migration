@@ -5,7 +5,7 @@ export default createBoard({
     name: 'Navigation',
     Board: () => <Navigation />,
     environmentProps: {
-        canvasHeight: 19,
-        canvasWidth: 292,
+        canvasHeight: 69,
+        canvasWidth: 530,
     },
 });

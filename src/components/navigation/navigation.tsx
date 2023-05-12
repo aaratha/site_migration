@@ -1,5 +1,7 @@
 import styles from './navigation.module.scss';
 import classNames from 'classnames';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { Link } from 'react-router-dom';
 
 export interface NavigationProps {
     className?: string;
@@ -13,8 +15,22 @@ export const Navigation = ({ className }: NavigationProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <nav className={styles.Navigation}>
-                <a href="/home">Home</a> | <a href="/projects">Projects</a> |{' '}
-                <a href="/about">About</a> | <a href="/contact">Contact</a>
+                <Link to="/">
+                    <button className={styles.nav_buttons}>Home</button>
+                </Link>
+                {' '}
+                <AnchorLink href="/#projects">
+                    <button className={styles.nav_buttons}>Projects</button>
+                </AnchorLink>{' '}
+                <Link to="/projects">
+                        <button className={styles.nav_buttons}>Projects</button>
+                </Link>
+                <a href="/about">
+                    <button className={styles.nav_buttons}>About</button>
+                </a>{' '}
+                <a href="/contact">
+                    <button className={styles.nav_buttons}>Contact</button>
+                </a>
             </nav>
         </div>
     );
